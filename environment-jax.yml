@@ -1,0 +1,40 @@
+name: nma-dl-jax
+
+# Works on: macOS ARM (Apple Silicon), macOS Intel, Linux, Windows
+# GPU acceleration is handled at runtime by the notebook's install cell:
+#   - Apple Silicon: pip install jax-metal
+#   - Linux + NVIDIA: pip install jax[cuda12]
+#   - Colab/Kaggle: pre-installed with GPU support
+
+channels:
+  - conda-forge   # has native ARM64 builds for all packages
+  - defaults
+
+dependencies:
+  - python=3.10
+
+  # Scientific stack — all have ARM64 builds on conda-forge
+  - numpy
+  - scipy
+  - matplotlib
+  - scikit-learn
+  - pandas
+  - ipywidgets
+  - tqdm
+  - pip
+
+  - pip:
+    # Resource monitoring
+    - papermill
+    - pynvml
+    - psutil
+
+    # PyTorch — pip wheels cover all platforms (ARM Mac, Linux, Windows)
+    - torch
+    - torchvision
+
+    # JAX — cpu variant works on all platforms
+    # For GPU: see notebook install cell or INSTALL.md
+    - "jax[cpu]"
+    - flax
+    - optax
