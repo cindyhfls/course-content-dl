@@ -19,6 +19,11 @@ dependencies:
   - matplotlib
   - scikit-learn
   - pandas
+  - pillow
+  - imageio
+  - seaborn
+  - nltk
+  - tensorboard
   - ipywidgets
   - tqdm
   - pip

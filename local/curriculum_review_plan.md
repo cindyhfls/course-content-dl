@@ -92,6 +92,8 @@
 ---
 
 ### W2D4 — Generative Models
+> **⚠ Hold: do not apply coding style / dependency standardization yet.** Full day content may be recreated from scratch — standardizing the current notebooks would be wasted effort.
+
 **Drop T1; keep T2 and T3 (per meeting).**
 - **T1 (VAEs, autoencoders, pPCA, BigGAN):** Drop. The BigGAN interactive demo in Sec 1.1 is motivating — consider moving just that cell as a brief intro to T2.
 - **T2 (Score-based / diffusion):** Keep.
@@ -103,6 +105,8 @@
 ---
 
 ### W2D5 — Attention And Transformers
+> **📝 Note:** W2D5 and W3D1 are likely to swap order ("LSTM then transformers"). Coding style patches can proceed; just remember to update any cross-references between the two days after the swap.
+
 **Keep T1; demote T2.**
 - **T1:** Well-organized (9 sections, cleanest notebook in the course). Could trim Sec 9 (Transformers beyond LMs) to a brief overview.
 - **T2:** Already mostly labeled as bonus. Make it an official bonus notebook.
@@ -110,6 +114,8 @@
 ---
 
 ### W3D1 — Time Series And NLP
+> **📝 Note:** See W2D5 note above — these two days are likely to swap. Coding style patches can proceed.
+
 **High priority — RNN/LSTM is completely absent.**
 - The day is called "Time Series" but no `nn.RNN` or `nn.LSTM` is ever instantiated anywhere in the course. Per meeting: "LSTM then transformers."
 - **Action needed:** Add a new tutorial (or substantial section) covering RNN/LSTM for sequence modeling. Could replace or absorb T1 (embeddings + feedforward net).
