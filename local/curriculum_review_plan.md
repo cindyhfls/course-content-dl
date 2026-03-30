@@ -9,7 +9,7 @@
 
 | Day | Current Name | Tutorials | Recommended Action | Priority |
 |-----|-------------|-----------|-------------------|----------|
-| W1D1 | Basics And PyTorch | T1 | Keep; JAX notebook retained as future option (not a current priority) | Low |
+| ~~W1D1~~ | ~~Basics And PyTorch~~ | ~~T1~~ | ~~Keep; JAX notebook retained as future option (not a current priority)~~ | ~~Low~~ ✅ |
 | W1D2 | Linear Deep Learning | T1, T2, T3 + Bonus | Simplify; move T3 (SVD/RSA/deep LNNs) to bonus | Medium |
 | W1D3 | Multi-Layer Perceptrons | T1, T2 | Keep; trim LIF neuron section (T1) | Low |
 | W1D4 | Optimization | T1 (very long) | Simplify; cut overparameterization (Sec 5); move bonus training section out; add Cost Functions discussion (moved from W2D2) | High |
@@ -29,17 +29,24 @@
 
 ## Per-Day Details
 
-### W1D1 — Basics And PyTorch
-**Keep largely as-is.**
-- The orphan JAX notebook (`W1D1_Tutorial1_JAX.ipynb`) has no corresponding JAX variants for later days — mark as bonus or remove to avoid confusion.
-- GPU benchmark exercise (Sec 2.4) could be a non-interactive demo rather than a coding exercise.
+### ~~W1D1 — Basics And PyTorch~~ ✅ (2026-03-29)
 
-**Coding style issues:**
-- `ipywidgets` imported twice in the same notebook (once at setup, once inline per cell) — clean up to single top-level import.
+**Done:**
+- Added version check / install cell to Setup section; prints package versions, points local users to `requirements_tutorials.txt`
+- Consolidated all imports to top-level Setup section; removed scattered imports and duplicate pip installs
+- Extracted altair/paper visualization bonus into `W1D1_BonusLecture.ipynb` with its own install and imports; removed `altair`/`vega_datasets` from main tutorial
+- Added Colab GPU conservation tips callout in Section 2.4; highlighted that Setup cells must be rerun after runtime restart
+- Added bold **Appendix** references with Colab jump links in three cells
+- Updated Meet Our Lecturers: flat alphabetical list of all content creators with websites; added Past contributors section
+
+**Still open:**
+- `W1D1_Tutorial1_JAX.ipynb` — mark as bonus or remove (deferred, JAX out of scope for now)
 
 ---
 
 ### W1D2 — Linear Deep Learning
+**Coding style updated (2026-03-29):** Added version check / install cell and consolidated imports to Setup section across T1, T2, T3. Scattered imports removed from Figure Settings cells.
+
 **Simplify — 3 tutorials is an unusually heavy day.**
 - **T3 (Deep Linear NNs / SVD / RSA / illusory correlations):** Move to bonus. Research-oriented and disconnected from practical DL for most students.
 - **T2:** Reduce interactive widget demos (currently 4); 2 is enough.
@@ -51,6 +58,8 @@
 ---
 
 ### W1D3 — Multi-Layer Perceptrons
+**Coding style updated (2026-03-29):** Added version check / install cell and consolidated imports to Setup section across T1, T2.
+
 **Keep, minor trims.**
 - **T1, LIF neuron section (Sec 3):** Good neuroscience context but tangential to practical DL — move to bonus or mark clearly as optional.
 - **T2, Xavier init section:** Overlaps with W1D2 initialization discussion — consider condensing.
@@ -58,6 +67,8 @@
 ---
 
 ### W1D4 — Optimization
+**Coding style updated (2026-03-29):** Added version check / install cell and consolidated imports to Setup section. Removed duplicate `ipywidgets` import from Figure Settings cell.
+
 **Simplify — single notebook is ~3700 lines.**
 - **Section 5 (overparameterization):** Move to bonus or replace with a brief conceptual discussion — not practically actionable for most students.
 - The standalone training bonus already exists; the main notebook body should end cleanly after optimizer comparison (Adam/RMSprop/SGD).
