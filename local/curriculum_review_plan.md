@@ -10,7 +10,7 @@
 | Day | Current Name | Tutorials | Recommended Action | Priority |
 |-----|-------------|-----------|-------------------|----------|
 | ~~W1D1~~ | ~~Basics And PyTorch~~ | ~~T1~~ | ~~Keep; JAX notebook retained as future option (not a current priority)~~ | ~~Low~~ ✅ |
-| W1D2 | Linear Deep Learning | T1, T2, T3 + Bonus | Simplify; move T3 (SVD/RSA/deep LNNs) to bonus | Medium |
+| ~~W1D2~~ | ~~Linear Deep Learning~~ | ~~T1, T2, T3 + Bonus~~ | ~~Coding style standardized; T3 kept as-is (already bonus-marked)~~ | ~~Medium~~ ✅ |
 | W1D3 | Multi-Layer Perceptrons | T1, T2 | Keep; trim LIF neuron section (T1) | Low |
 | W1D4 | Optimization | T1 (very long) | Simplify; cut overparameterization (Sec 5); move bonus training section out; add Cost Functions discussion (moved from W2D2) | High |
 | **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | — |
@@ -44,16 +44,12 @@
 
 ---
 
-### W1D2 — Linear Deep Learning
-**Coding style updated (2026-03-29):** Added version check / install cell and consolidated imports to Setup section across T1, T2, T3. Scattered imports removed from Figure Settings cells.
+### ~~W1D2 — Linear Deep Learning~~ ✅ (2026-03-31)
 
-**Simplify — 3 tutorials is an unusually heavy day.**
-- **T3 (Deep Linear NNs / SVD / RSA / illusory correlations):** Move to bonus. Research-oriented and disconnected from practical DL for most students.
-- **T2:** Reduce interactive widget demos (currently 4); 2 is enough.
-- The BonusLecture notebook should be reviewed separately.
-
-**Coding style issues:**
-- T2 imports `matplotlib` before `torch` — reverse to match convention across other days.
+**Done:**
+- Added version check / install cell and consolidated imports to Setup section across T1, T2, T3; removed scattered imports from Figure Settings cells
+- Fixed T2 import order: moved `import torch` before `numpy` and `matplotlib` to match course convention; removed duplicate `import torch` from `set_seed` helper cell
+- T3 kept as-is (exercises are already marked as bonus; referenced from T1; not flagged by experts for removal)
 
 ---
 
