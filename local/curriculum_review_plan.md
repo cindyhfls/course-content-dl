@@ -176,6 +176,8 @@
 - T2 (DL Thinking 3) could be extracted if the case study series is being kept — or dropped.
 - No `nma.mplstyle`, no `vibecheck` in T1 or T3.
 
+**⚠ External dependency on personal repo:** T1 pulls game code from `github.com/raymondchua/nma_rl_games` (Raymond Chua, one of the lecturers). The `git clone` is currently commented out and replaced with an OSF mirror download, but the OSF link should be verified and the dependency on a personal repo flagged for long-term hosting (e.g., fork under NeuromatchAcademy org).
+
 **What DL Thinking 3 actually covers (T2):**
 Five forward-looking discussion prompts:
 1. **The Future** — distribution shift, non-stationarity, designing DL systems for a changing world
