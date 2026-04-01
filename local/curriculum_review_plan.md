@@ -11,8 +11,8 @@
 |-----|-------------|-----------|-------------------|----------|
 | ~~W1D1~~ | ~~Basics And PyTorch~~ | ~~T1~~ | ~~Keep; JAX notebook retained as future option (not a current priority)~~ | ~~Low~~ ✅ |
 | ~~W1D2~~ | ~~Linear Deep Learning~~ | ~~T1, T2, T3 + Bonus~~ | ~~Coding style standardized; T3 kept as-is (already bonus-marked)~~ | ~~Medium~~ ✅ |
-| W1D3 | Multi-Layer Perceptrons | T1, T2 | Keep; trim LIF neuron section (T1) | Low |
-| W1D4 | Optimization | T1 (very long) | Simplify; cut overparameterization (Sec 5); move bonus training section out; add Cost Functions discussion (moved from W2D2) | High |
+| ~~W1D3~~ | ~~Multi-Layer Perceptrons~~ | ~~T1, T2~~ | ~~Coding style standardized; LIF neuron section already in Bonus~~ | ~~Low~~ ✅ |
+| ~~W1D4~~ | ~~Optimization~~ | ~~T1 (very long)~~ | ~~Coding exercises in Secs 4–7 marked optional~~ | ~~High~~ ✅ |
 | **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | — |
 | W2D1 | Regularization | T1, T2 | Cut back; merge into one notebook; move double descent/rethinking generalization to bonus | High |
 | W2D2 | ConvNets | T1 | Rename; restructure as sole CNN day: trim existing content, add condensed transfer learning + ResNet from W2D3 as demos | Medium |
@@ -53,22 +53,25 @@
 
 ---
 
-### W1D3 — Multi-Layer Perceptrons
-**Coding style updated (2026-03-29):** Added version check / install cell and consolidated imports to Setup section across T1, T2.
+### ~~W1D3 — Multi-Layer Perceptrons~~ ✅ (2026-03-31)
 
-**Keep, minor trims.**
-- **T1, LIF neuron section (Sec 3):** Good neuroscience context but tangential to practical DL — move to bonus or mark clearly as optional.
-- **T2, Xavier init section:** Overlaps with W1D2 initialization discussion — consider condensing.
+**Done:**
+- Added version check / install cell and consolidated imports to Setup section across T1, T2; coding style clean
+- LIF neuron section (T1) is already in the Bonus section — no action needed
+- Xavier init bonus (T2) already in Bonus section; overlaps with W1D2 init discussion but no changes made (content decision deferred)
 
 ---
 
-### W1D4 — Optimization
-**Coding style updated (2026-03-29):** Added version check / install cell and consolidated imports to Setup section. Removed duplicate `ipywidgets` import from Figure Settings cell.
+### ~~W1D4 — Optimization~~ ✅ (2026-04-01)
 
-**Simplify — single notebook is ~3700 lines.**
-- **Section 5 (overparameterization):** Move to bonus or replace with a brief conceptual discussion — not practically actionable for most students.
-- The standalone training bonus already exists; the main notebook body should end cleanly after optimizer comparison (Adam/RMSprop/SGD).
-- Consider whether LR scheduling content here and in W2D1 T2 Sec 4 can be consolidated to one place.
+**Done:**
+- Coding style updated (2026-03-29): version check / install cell, consolidated imports, removed duplicate `ipywidgets` import.
+- Coding exercises in Secs 4, 6, and 7 (momentum, minibatch sampling, RMSprop) marked `*(optional)*` to reduce student load.
+- **Tutorial1 split (2026-04-01):** Sections 5–8 (non-convexity, mini-batches, adaptive methods, ethical concerns) and the Bonus exercise moved out of `W1D4_Tutorial1` into a new `W1D4_BonusLecture.ipynb`. Tutorial1 now covers Secs 1–4 only; BonusLecture includes a full self-contained setup block so it can be run independently.
+- **Tutorial2 added (2026-04-01):** Moved `W2D2_Tutorial2` (DL Thinking 1 — cost functions) to `W1D4_Tutorial2`. Renamed all "DL Thinking" references to "DL Case Study" throughout the notebook.
+
+**Still open (deferred):**
+- LR scheduling consolidation with W2D1 T2 Sec 4 not yet addressed.
 
 ---
 
@@ -85,7 +88,7 @@
 **Simplify T1; rename the day.**
 - **T1, Bonus section:** Remove — it's a full training loop + regularization exercise that directly repeats W2D1 content.
 - **T1, Sec 4 (interactive parameter count demo):** Shorten.
-- **T2 (DL Thinking 1 — cost functions):** Keep as-is; no code, purely discussion.
+- **T2 (DL Thinking 1 — cost functions):** ~~Keep as-is; no code, purely discussion.~~ **Moved to `W1D4_Tutorial2` (2026-04-01).** W2D2 is now T1-only.
 - **Rename:** Drop "DlThinking" from folder and day title. See naming section below.
 
 ---
