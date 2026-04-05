@@ -14,9 +14,9 @@
 | ~~W1D3~~ | ~~Multi-Layer Perceptrons~~ | ~~T1, T2~~ | ~~Coding style standardized; LIF neuron section already in Bonus~~ | ~~Low~~ ✅ |
 | ~~W1D4~~ | ~~Optimization~~ | ~~T1 (very long)~~ | ~~Coding exercises in Secs 4–7 marked optional~~ | ~~High~~ ✅ |
 | **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | — |
-| W2D1 | Regularization | T1, T2 | Cut back; merge into one notebook; move double descent/rethinking generalization to bonus | High |
-| W2D2 | ConvNets | T1 | Rename; restructure as sole CNN day: trim existing content, add condensed transfer learning + ResNet from W2D3 as demos | Medium |
-| W2D3 | Modern ConvNets | T1, T2 | Move entirely to bonus; T2 (facial recognition + ethics) may survive as standalone ethics bonus notebook | High |
+| W2D1 | Regularization | T1, T2 | This seems to be fine?
+| W2D2 | ConvNets | T1 | Rename; restructure as sole CNN day: trim existing content, add condensed transfer learning + ResNet from W2D3 as demos | Medium | cut to 90 min
+| W2D3 | Modern ConvNets | T1, T2 | Move entirely to bonus; T2 (facial recognition + ethics) may survive as standalone ethics bonus notebook | High | Cut to 90 min and put to W2D2
 | W2D4 | Generative Models | T1, T2, T3 | Drop T1 (VAEs); keep T2+T3 (diffusion); optionally rescue BigGAN demo as intro | High |
 | W2D5 | Attention And Transformers | T1, T2 | Keep T1; make T2 an official bonus notebook | Medium |
 | W3D1 | Time Series And NLP | T1, T2, T3 | Add RNN/LSTM tutorial (currently absent!); slim T2 (overlaps W2D5) | High |
@@ -93,12 +93,12 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 ---
 
-### W2D2 — ConvNets And [DL Thinking 1]
-**Simplify T1; rename the day.**
+### W2D2 — ConvNets *(renamed from ConvnetsAndDlThinking, 2026-04-05)*
+**Simplify T1.**
 - **T1, Bonus section:** Remove — it's a full training loop + regularization exercise that directly repeats W2D1 content.
 - **T1, Sec 4 (interactive parameter count demo):** Shorten.
 - **T2 (DL Thinking 1 — cost functions):** ~~Keep as-is; no code, purely discussion.~~ **Moved to `W1D4_Tutorial2` (2026-04-01).** W2D2 is now T1-only.
-- **Rename:** Drop "DlThinking" from folder and day title. See naming section below.
+- **Folder renamed** to `W2D2_Convnets` (2026-04-05).
 
 ---
 
@@ -215,7 +215,7 @@ The term "Thinking" is now ambiguous given LLM chain-of-thought/reasoning modes.
 "Case Study" fits T1 and T2 well — they follow a structured vignette → discussion → design format. T3 is more of a survey/horizon-scan, so "Frontiers" is a better fit if it's kept.
 
 Folder rename implications:
-- `W2D2_ConvnetsAndDlThinking` → `W2D2_ConvnetsAndCostFunctions` (more specific) or `W2D2_ConvnetsAndCaseStudy1`
+- ~~`W2D2_ConvnetsAndDlThinking`~~ → **`W2D2_Convnets` (done, 2026-04-05)**
 - `W3D2_DlThinking2` → `W3D2_CaseStudy2` or `W3D2_ArchitectureAndMultimodalDL`
 - `W3D5_ReinforcementLearningForGamesAndDlThinking3` → `W3D5_RLForGames` (bonus; DL Thinking 3 dropped or extracted)
 
