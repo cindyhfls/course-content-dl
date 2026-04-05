@@ -75,6 +75,15 @@
 
 ---
 
+### W1D5 — Project Wildcard Day (Flex)
+
+No tutorial notebook for this day. Students study one curriculum day relevant to their project track.
+
+**Still open:**
+- At the end of the restructuring pass, verify that the suggested day titles referenced in the project notebooks are consistent with the final content and naming of each tutorial day (especially days that have been renamed or had content moved, e.g. W1D4, W2D2, W3D2).
+
+---
+
 ### W2D1 — Regularization
 **Cut back significantly (per meeting).**
 - **Merge T1 and T2 into a single notebook.** The two-tutorial structure is unnecessarily heavy for one thematic topic.
