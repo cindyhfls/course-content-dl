@@ -3,6 +3,8 @@
 > Goals from expert review: reduce and simplify, cut outdated/dense material, standardize code style.
 > JAX refactorization is deferred.
 
+> **Requirements file (2026-04-10):** Dropped the separate `tutorials/requirements_tutorials.txt` file. All tutorial dependencies are now listed in the root `requirements.txt`. Version check cells in all tutorials now point to `https://github.com/NeuromatchAcademy/course-content-dl/blob/main/requirements.txt`.
+
 ---
 
 ## Summary Table
@@ -32,7 +34,7 @@
 ### ~~W1D1 — Basics And PyTorch~~ ✅ (2026-03-29)
 
 **Done:**
-- Added version check / install cell to Setup section; prints package versions, points local users to `requirements_tutorials.txt`
+- Added version check / install cell to Setup section; prints package versions, points local users to root `requirements.txt`
 - Consolidated all imports to top-level Setup section; removed scattered imports and duplicate pip installs
 - Extracted altair/paper visualization bonus into `W1D1_BonusLecture.ipynb` with its own install and imports; removed `altair`/`vega_datasets` from main tutorial
 - Added Colab GPU conservation tips callout in Section 2.4; highlighted that Setup cells must be rerun after runtime restart
