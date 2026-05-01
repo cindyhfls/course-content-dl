@@ -29,7 +29,7 @@ You can update the OSF string to download that file.
 | W2D4 | Generative Models | T1, T2, T3 | Put VAE into Bonus and cut down math in diffusion models.
 | W2D5 | Attention And Transformers | T1, T2 | think it's okay to switch with W3D1 | Medium |
 | W3D1 | Time Series And NLP | T1, T2, T3 | I think it's okay to switch this with W2D5 | Medium |
-| W3D2 | DlThinking2 | T1 | Rename
+| ~~W3D2~~ | ~~DlThinking2~~ | ~~T1~~ | ~~Rename~~ | ✅ |
 | ~~W3D3~~ | ~~Unsupervised And Self-Supervised~~ | ~~Separate utils import from OSF with outdated numpy. Migrate datasets, checkpoints and images dependency to new OSF storage.~~ | ~~Medium~~ ✅ |
 | W3D4 | Basic Reinforcement Learning | T1 | Add REINFORCE/policy gradient; condense value/policy iteration; add PyTorch | High | 
 | W3D5 | RL for Games And DlThinking3 | T1, T2, T3 | Move entirely to bonus; extract DL Thinking 3 if keeping the series | High |
@@ -132,10 +132,10 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 ---
 
-### W3D2 — [DL Thinking 2]
-**Rename; review one case study for relevance.**
-- T1 is entirely discussion-based (no code).
-- **Rename:** See naming section below.
+### ~~W3D2 — DL Thinking 2~~ ✅ (~2026-03)
+
+**Done:**
+- Folder renamed `W3D2_DlThinking2` → `W3D2_DLCaseStudy2`; `materials.yml` updated accordingly.
 
 ---
 
