@@ -1,3 +1,25 @@
+[Original DL_NMA coarse design](https://docs.google.com/spreadsheets/d/1tPS8eCBRlw5iVqS0zw6CPf7cBmsscjPNmM7SDq7lXTM/edit?usp=sharing) 
+Week 1: The basics	
+D1	Basics, Meet and Greet, Pytorch
+D2	Linear DL and Pytorch
+D3	MLPs 
+D4	Optimization
+D5	Regularization/ Generalization
+	
+Week 2: Doing more with fewer parameters	
+D1	Parameter sharing: Convnets and RNNs 
+D2	Convnets/ Transfer learning
+D3	RNNs
+D4	Attention/Transformers
+D5	VAEs and GANs
+	
+Week 3: Higher doses of magic	
+D1	Unsupervised and self-supervised learning
+D2	Basic RL ideas
+D3	RL for games
+D4	Continual learning/ Causality/ The future of DL
+D5	Wrapup
+
 # NMA DL Curriculum Review Plan
 
 > Goals from expert review: reduce and simplify, cut outdated/dense material, standardize code style.
