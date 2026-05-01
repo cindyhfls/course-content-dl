@@ -5,6 +5,13 @@
 
 > **Requirements file (2026-04-10):** Dropped the separate `tutorials/requirements_tutorials.txt` file. All tutorial dependencies are now listed in the root `requirements.txt`. Version check cells in all tutorials now point to `https://github.com/NeuromatchAcademy/course-content-dl/blob/main/requirements.txt`.
 
+----
+OSF: 
+This is the old OSF repo:https://osf.io/hygbm/overview
+We want to use the new course-specific repo and organize materials by day: https://osf.io/pt65q/overview
+
+You can update the OSF string to download that file.
+
 ---
 
 ## Summary Table
@@ -15,16 +22,16 @@
 | ~~W1D2~~ | ~~Linear Deep Learning~~ | ~~T1, T2, T3 + Bonus~~ | ~~Coding style standardized; T3 kept as-is (already bonus-marked)~~ | ~~Medium~~ ✅ |
 | ~~W1D3~~ | ~~Multi-Layer Perceptrons~~ | ~~T1, T2~~ | ~~Coding style standardized; LIF neuron section already in Bonus~~ | ~~Low~~ ✅ |
 | ~~W1D4~~ | ~~Optimization~~ | ~~T1 (very long)~~ | ~~Coding exercises in Secs 4–7 marked optional~~ | ~~High~~ ✅ |
-| **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | — |
-| W2D1 | Regularization | T1, T2 | This seems to be fine?
+| **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | Make sure the project points to the correct tutorial name! |
+| ~~W2D1~~ | ~~Regularization~~ | ~~T1, T2~~ | ~~Fine as-is~~ | — ✅ |
 | ~~W2D2~~ | ~~ConvNets~~ | ~~T1, BonusLecture~~ | ~~Folder renamed to W2D2_Convnets; T1 trimmed; Transfer Learning added as Section 5; BonusLecture merged from W2D3 T1+T2 (modern ConvNets + facial recognition + ethics)~~ | ~~High~~ ✅ |
 | ~~W2D3~~ | ~~Modern ConvNets~~ | ~~T1, T2~~ | ~~Removed; content absorbed into W2D2~~ | ~~High~~ ✅ |
-| W2D4 | Generative Models | T1, T2, T3 | Drop T1 (VAEs); keep T2+T3 (diffusion); optionally rescue BigGAN demo as intro | High |
-| W2D5 | Attention And Transformers | T1, T2 | Keep T1; make T2 an official bonus notebook | Medium |
-| W3D1 | Time Series And NLP | T1, T2, T3 | Add RNN/LSTM tutorial (currently absent!); slim T2 (overlaps W2D5) | High |
-| W3D2 | DlThinking2 | T1 | Rename; review Forrest Gump case study for broad relevance | Medium |
-| W3D3 | Unsupervised And Self-Supervised | T1 (very long) | Compress Secs 1–4 to demos; cut VAE section; keep SimCLR; consider adding Barlow Twins | High |
-| W3D4 | Basic Reinforcement Learning | T1 | Add REINFORCE/policy gradient; condense value/policy iteration; add PyTorch | High |
+| W2D4 | Generative Models | T1, T2, T3 | Put VAE into Bonus and cut down math in diffusion models.
+| W2D5 | Attention And Transformers | T1, T2 | think it's okay to switch with W3D1 | Medium |
+| W3D1 | Time Series And NLP | T1, T2, T3 | I think it's okay to switch this with W2D5 | Medium |
+| W3D2 | DlThinking2 | T1 | Rename
+| ~~W3D3~~ | ~~Unsupervised And Self-Supervised~~ | ~~Separate utils import from OSF with outdated numpy. Migrate datasets, checkpoints and images dependency to new OSF storage.~~ | ~~Medium~~ ✅ |
+| W3D4 | Basic Reinforcement Learning | T1 | Add REINFORCE/policy gradient; condense value/policy iteration; add PyTorch | High | 
 | W3D5 | RL for Games And DlThinking3 | T1, T2, T3 | Move entirely to bonus; extract DL Thinking 3 if keeping the series | High |
 
 ---
@@ -82,16 +89,14 @@
 No tutorial notebook for this day. Students study one curriculum day relevant to their project track.
 
 **Still open:**
-- At the end of the restructuring pass, verify that the suggested day titles referenced in the project notebooks are consistent with the final content and naming of each tutorial day (especially days that have been renamed or had content moved, e.g. W1D4, W2D2, W3D2).
+- At the end of the restructuring pass, verify that the suggested day titles referenced in the project notebooks are consistent with the final content and naming of each tutorial day (especially days that have been renamed or had content moved, e.g. W1D4, W2D2, W3D2). Also the actual dates (e.g. July 15 should not be there).
 
 ---
 
-### W2D1 — Regularization
-**Cut back significantly (per meeting).**
-- **Merge T1 and T2 into a single notebook.** The two-tutorial structure is unnecessarily heavy for one thematic topic.
-- **T2, Sec 5 (rethinking generalization / double descent):** Move to bonus — research-level, not actionable.
-- **T2, Sec 4 (LR scheduling):** Consolidate with W1D4 optimizer section, or keep as a brief demo rather than a full coding exercise.
-- Both tutorials use a custom `AnimalFaces` dataset requiring a download — verify the download link is still live and consider caching in a more stable location.
+### ~~W2D1 — Regularization~~ ✅ (2026-04-16)
+
+**Done:**
+- Imports and version check cells verified; fine as-is.
 
 ---
 
@@ -115,10 +120,10 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 
 ### W2D4 — Generative Models
-> **⚠ Hold: do not apply coding style / dependency standardization yet.** Full day content may be recreated from scratch — standardizing the current notebooks would be wasted effort.
+> **⚠ Hold: do not apply coding style / dependency standardization yet.** Not recreating content but cut out VAE and math in diffusion models
 
 **Drop T1; keep T2 and T3 (per meeting).**
-- **T1 (VAEs, autoencoders, pPCA, BigGAN):** Drop. The BigGAN interactive demo in Sec 1.1 is motivating — consider moving just that cell as a brief intro to T2.
+- **T1 (VAEs, autoencoders, pPCA, BigGAN):** Drop section 4-5.
 - **T2 (Score-based / diffusion):** Keep.
 - **T3 (Image diffusion, U-Net, Stable Diffusion, conditional diffusion):** Keep.
 
@@ -127,48 +132,29 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 ---
 
-### W2D5 — Attention And Transformers
-> **📝 Note:** W2D5 and W3D1 are likely to swap order ("LSTM then transformers"). Coding style patches can proceed; just remember to update any cross-references between the two days after the swap.
-
-**Keep T1; demote T2.**
-- **T1:** Well-organized (9 sections, cleanest notebook in the course). Could trim Sec 9 (Transformers beyond LMs) to a brief overview.
-- **T2:** Already mostly labeled as bonus. Make it an official bonus notebook.
-
----
-
-### W3D1 — Time Series And NLP
-> **📝 Note:** See W2D5 note above — these two days are likely to swap. Coding style patches can proceed.
-
-**High priority — RNN/LSTM is completely absent.**
-- The day is called "Time Series" but no `nn.RNN` or `nn.LSTM` is ever instantiated anywhere in the course. Per meeting: "LSTM then transformers."
-- **Action needed:** Add a new tutorial (or substantial section) covering RNN/LSTM for sequence modeling. Could replace or absorb T1 (embeddings + feedforward net).
-- **T2 (NLP pipeline, BERT, GPT fine-tuning):** Overlaps heavily with W2D5 transformers day — condense or move LLM fine-tuning parts to bonus.
-- **T3 Bonus (multilingual embeddings):** Keep as-is.
-
-**Coding style issues:**
-- T1 does not import `torch` at the top level — only imports it mid-notebook. Fix setup cell.
-- T1 missing `nma.mplstyle` — add to figure settings cell.
-
----
-
 ### W3D2 — [DL Thinking 2]
 **Rename; review one case study for relevance.**
 - T1 is entirely discussion-based (no code).
-- **Sec 4 (Forrest Gump / brain imaging):** Neuroscience-specific; may not resonate with non-neuro students — review whether to keep or replace with a more general case study.
 - **Rename:** See naming section below.
 
 ---
 
 ### W3D3 — Unsupervised And Self-Supervised Learning
-**Simplify — single notebook is ~4600 lines.**
-- **Secs 1–4 (supervised encoder, random projections, VAE baselines):** These are comparative motivations. Compress to pre-computed demos or a brief narrative — students don't need to code all of these baselines.
-- **VAE section (Sec 4):** Remove or shorten significantly since VAEs are being cut from W2D4.
-- **SimCLR (Sec 6):** Keep as the core coding exercise.
-- **Barlow Twins:** Not currently present — consider adding as an alternative/bonus per meeting suggestion (pedagogically easier than SimCLR).
 
-**Coding style issues:**
-- `import torch` appears twice in the notebook — remove the duplicate.
-- Heavy use of OSF download URLs for pretrained models — fragile; verify links and consider a more stable hosting solution.
+**Coding style (done 2026-04-27):**
+- `import importlib` and `import random` added to top-level imports cell (were missing).
+- `import torch` removed from `set_seed` body (moved to top-level imports).
+- Version check cell added after vibecheck.
+
+**Dependency inlining (done 2026-05-01):**
+- `neuromatch_ssl_tutorial` module code (`plot_util`, `data`, `models`, `load`) inlined as four hidden `# @title` cells; relative imports stripped.
+- `types.SimpleNamespace` objects created to preserve `data.xxx` / `models.xxx` / `load.xxx` / `plot_util.xxx` call syntax throughout the notebook.
+- `np.product()` → `np.prod()` fixed in `VGG16_with_encoder` (was a deprecation bug in the original `load.py`).
+- OSF download URL updated to new project-specific package (`https://osf.io/ec7hy/`, file `NMA_DL_W3D3_dependencies.zip`) containing only dataset, checkpoints, and images (no Python module files).
+- `extractall()` → `extractall(REPO_PATH)` so flat zip contents land under `neuromatch_ssl_tutorial/` as expected.
+
+**Pending:**
+- Colab test to confirm end-to-end run.
 
 ---
 
@@ -179,9 +165,10 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 - **REINFORCE/policy gradient:** Completely absent — needs to be added (new section or new tutorial).
 - **Value iteration and policy iteration:** Good conceptual foundations but could be condensed into one section with fewer coding exercises.
 
-**Coding style issues:**
-- No `nma.mplstyle` — add to figure settings cell.
-- No `vibecheck` feedback gadget — add if standardizing.
+**Coding style (done 2026-04-27):**
+- `nma.mplstyle` figure settings cell added after imports cell.
+- Version check cell added after vibecheck.
+
 - **Only notebook with type hints** (`from typing import Optional, Tuple`) — decide on course-wide policy (see Style section).
 
 ---
@@ -190,7 +177,13 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 **Move entirely to bonus (per meeting).**
 - T1 (Othello RL) and T3 (MCTS) are game-specific and highly specialized.
 - T2 (DL Thinking 3) could be extracted if the case study series is being kept — or dropped.
-- No `nma.mplstyle`, no `vibecheck` in T1 or T3.
+
+**Coding style (done 2026-04-27):**
+- T1: imports and set_seed already clean — no changes needed.
+- T3: removed duplicate `import random` from imports cell; version check added.
+- T1/T3: version check cell added after vibecheck.
+- T1/T3: no matplotlib usage — no figure settings needed.
+
 
 **⚠ External dependency on personal repo:** T1 pulls game code from `github.com/raymondchua/nma_rl_games` (Raymond Chua, one of the lecturers). The `git clone` is currently commented out and replaced with an OSF mirror download, but the OSF link should be verified and the dependency on a personal repo flagged for long-term hosting (e.g., fork under NeuromatchAcademy org).
 
@@ -227,15 +220,15 @@ Folder rename implications:
 
 ## Coding Style: Top Issues to Fix (Priority Order)
 
-| Issue | Affected Days | Fix |
-|-------|--------------|-----|
-| Missing `nma.mplstyle` | W3D1 T1, W3D4, W3D5 T1/T3 | Add standard figure settings cell |
-| Missing `vibecheck` | W3D4, W3D5 T1/T3 | Add or remove from all (decide policy) |
-| `matplotlib.pylab` vs `.pyplot` | W2D4 T1 | Change to `import matplotlib.pyplot as plt` |
-| `ipywidgets` double-import | W1D1, others | Single top-level import only |
-| `import torch` missing from top-level setup | W3D1 T1 | Add to setup cell |
-| Duplicate `import torch` mid-notebook | W3D3 | Remove duplicate |
-| Type hints inconsistency | W3D4 only | Decide course policy; likely remove for consistency |
-| Student TODO marker inconsistency | All days | Standardize to `# YOUR CODE HERE` + `raise NotImplementedError` |
-| All helpers defined inline (copy-paste across 20+ notebooks) | All days | Long-term: extract common utilities (`set_seed`, `set_device`, plotting) into a shared module |
-| Capitalization of "Tutorial Objectives" header | Several | Standardize in a sweep |
+| Issue | Affected Days | Fix | Status |
+|-------|--------------|-----|--------|
+| Missing `nma.mplstyle` | ~~W3D1 T1~~, ~~W3D4~~, W3D5 T1/T3 | Add standard figure settings cell | W3D4 done 2026-04-27; W3D1 T1 already had it; W3D5 T1/T3 have no matplotlib |
+| `matplotlib.pylab` vs `.pyplot` | W2D4 T1 | Change to `import matplotlib.pyplot as plt` | Open (W2D4 on hold) |
+| `import torch` missing from top-level setup | ~~W3D1 T1~~ | Add to setup cell | Done 2026-04-27 |
+| Duplicate/stray imports inside `set_seed` | ~~W3D1 T1/T3~~, ~~W3D3~~ | Remove from set_seed body; ensure in top-level imports | Done 2026-04-27 |
+| Duplicate `import random` in imports cell | ~~W3D5 T3~~ | Remove duplicate | Done 2026-04-27 |
+| Missing version check cell | ~~W3D1~~, ~~W3D3~~, ~~W3D4~~, ~~W3D5~~ | Add after vibecheck | Done 2026-04-27 |
+| Type hints inconsistency | W3D4 only | Decide course policy; likely remove for consistency | Open |
+| Student TODO marker inconsistency | All days | Standardize to `# YOUR CODE HERE` + `raise NotImplementedError` | Open |
+| All helpers defined inline (copy-paste across 20+ notebooks) | All days | Long-term: extract common utilities (`set_seed`, `set_device`, plotting) into a shared module | Open (long-term) |
+| Capitalization of "Tutorial Objectives" header | Several | Standardize in a sweep | Open |
