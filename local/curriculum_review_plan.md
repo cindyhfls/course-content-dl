@@ -43,10 +43,10 @@ You can update the OSF string to download that file.
 **Done:**
 - Added version check / install cell to Setup section; prints package versions, points local users to root `requirements.txt`
 - Consolidated all imports to top-level Setup section; removed scattered imports and duplicate pip installs
-- Extracted altair/paper visualization bonus into `W1D1_BonusLecture.ipynb` with its own install and imports; removed `altair`/`vega_datasets` from main tutorial
 - Added Colab GPU conservation tips callout in Section 2.4; highlighted that Setup cells must be rerun after runtime restart
 - Added bold **Appendix** references with Colab jump links in three cells
 - Updated Meet Our Lecturers: flat alphabetical list of all content creators with websites; added Past contributors section
+- **(2026-05-01) Bonus section restored inline:** The altair/paper visualization bonus (60 years of ML research) was initially extracted to `W1D1_BonusLecture.ipynb` but has been merged back into `W1D1_Tutorial1` before the Appendix following feedback. `altair`/`vega_datasets` added back to install and imports cells. `W1D1_BonusLecture.ipynb` deleted.
 
 **Still open:**
 - `W1D1_Tutorial1_JAX.ipynb` — mark as bonus or remove (deferred, JAX out of scope for now)
@@ -76,8 +76,7 @@ You can update the OSF string to download that file.
 **Done:**
 - Coding style updated (2026-03-29): version check / install cell, consolidated imports, removed duplicate `ipywidgets` import.
 - Coding exercises in Secs 4, 6, and 7 (momentum, minibatch sampling, RMSprop) marked `*(optional)*` to reduce student load.
-- **Tutorial1 split (2026-04-01):** Sections 5–8 (non-convexity, mini-batches, adaptive methods, ethical concerns) and the Bonus exercise moved out of `W1D4_Tutorial1` into a new `W1D4_BonusLecture.ipynb`. Tutorial1 now covers Secs 1–4 only; BonusLecture includes a full self-contained setup block so it can be run independently.
-- **Tutorial2 added (2026-04-01):** Moved `W2D2_Tutorial2` (DL Thinking 1 — cost functions) to `W1D4_Tutorial2`. Renamed all "DL Thinking" references to "DL Case Study" throughout the notebook.
+- **(2026-05-01) Tutorial1 split reverted:** After review and feedback, the earlier split of Tutorial1 into two notebooks and the addition of Tutorial2 were undone. `W1D4_Tutorial1` is restored as the single unified original (Secs 1–8 + Bonus, 145 cells). `W1D4_Tutorial1_Bonus.ipynb`, `W1D4_BonusLecture.ipynb`, and `W1D4_Tutorial2.ipynb` all deleted. Only two changes kept on top of the upstream original: the import/version check cell (with correct GitHub URL for `requirements.txt`) and the `*(optional)*` markers on exercises 4, 6, and 7.
 
 **Still open (deferred):**
 - LR scheduling consolidation with W2D1 T2 Sec 4 not yet addressed.
