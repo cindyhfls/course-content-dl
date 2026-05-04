@@ -48,7 +48,7 @@ You can update the OSF string to download that file.
 | ~~W2D1~~ | ~~Regularization~~ | ~~T1, T2~~ | ~~Fine as-is~~ | — ✅ |
 | ~~W2D2~~ | ~~ConvNets~~ | ~~T1, BonusLecture~~ | ~~Folder renamed to W2D2_Convnets; T1 trimmed; Transfer Learning added as Section 5; BonusLecture merged from W2D3 T1+T2 (modern ConvNets + facial recognition + ethics)~~ | ~~High~~ ✅ |
 | ~~W2D3~~ | ~~Modern ConvNets~~ | ~~T1, T2~~ | ~~Removed; content absorbed into W2D2~~ | ~~High~~ ✅ |
-| W2D4 | Generative Models | T1, T2, T3 | Put VAE into Bonus and cut down math in diffusion models.
+| W2D4 | Generative Models | T1, T2, T3 | Put VAE into Bonus and cut down math in diffusion models. T1 diffusion tutorial: math trimmed, exercises clarified (2026-05-03/04). VAE drop still pending. |
 | W2D5 | Attention And Transformers | T1, T2 | think it's okay to switch with W3D1 | Medium |
 | W3D1 | Time Series And NLP | T1, T2, T3 | I think it's okay to switch this with W2D5 | Medium |
 | ~~W3D2~~ | ~~DlThinking2~~ | ~~T1~~ | ~~Rename~~ | ✅ |
@@ -150,6 +150,22 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 **Coding style issues:**
 - T1 uses `import matplotlib.pylab as plt` — the only notebook in the course to do so. Change to `matplotlib.pyplot`.
+
+**W2D4 Tutorial 1 (diffusion) edits (2026-05-03/04):**
+- `\mathcal` → `\mathscr` throughout T1 and T2 (main only; student/instructor folders untouched) — fixes Colab rendering.
+- **Exercise 1.3** renamed to **Bonus Exercise 1.3 (Optional)**: `reverse_diffusion_SDE_sampling_gmm` is not called by any later cell, so safe to skip.
+- Heavy math cells (DSM/ESM equivalence + γ_t weighted integral) merged into a single collapsible `<details>` note box above Exercise 2; students can expand for details but it's out of the way by default.
+- Exercise 1.3 code cleaned up:
+  - `x_traj_rev` shape reordered to `(nsteps, sampN, 2)` so `x_traj_rev[i]` is the snapshot at step `i`
+  - `sampN` default changed 500 → 200 (was same as `nsteps=500`, making shapes ambiguous)
+  - `eps_z` renamed to `z_t` to match equation notation
+  - `np.random.randn(*xT.shape)` → `np.random.randn(sampN, 2)` with comment explaining `*` unpacking
+  - Shape annotations added throughout explaining each variable's dimensions and that `2` is data dimensionality, not number of GMM components
+- Exercise 2 (`loss_fn`) code cleaned up:
+  - `x` → `x_0`, `perturbed_x` → `x_t` to match plain-language step descriptions
+  - `std[:, None]` → `std.unsqueeze(1)` for clarity
+  - Shape annotations added for all intermediate variables
+  - Note added explaining `random_t` is continuous `t ∈ [eps, 1]`, unlike the discrete `nsteps` index in reverse diffusion
 
 ---
 
