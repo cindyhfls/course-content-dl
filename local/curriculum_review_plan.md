@@ -47,14 +47,14 @@ You can update the OSF string to download that file.
 | **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | Make sure the project points to the correct tutorial name! |
 | ~~W2D1~~ | ~~Regularization~~ | ~~T1, T2~~ | ~~Fine as-is~~ | — ✅ |
 | ~~W2D2~~ | ~~ConvNets~~ | ~~T1, BonusLecture~~ | ~~Folder renamed to W2D2_Convnets; T1 trimmed; Transfer Learning added as Section 5; BonusLecture merged from W2D3 T1+T2 (modern ConvNets + facial recognition + ethics)~~ | ~~High~~ ✅ |
-| ~~W2D3~~ | ~~Modern ConvNets~~ | ~~T1, T2~~ | ~~Removed; content absorbed into W2D2~~ | ~~High~~ ✅ |
-| W2D4 | Generative Models | T1, T2, T3 | Put VAE into Bonus and cut down math in diffusion models. T1 diffusion tutorial: math trimmed, exercises clarified (2026-05-03/04). VAE drop still pending. |
-| W2D5 | Attention And Transformers | T1, T2 | think it's okay to switch with W3D1 | Medium |
-| W3D1 | Time Series And NLP | T1, T2, T3 | I think it's okay to switch this with W2D5 | Medium |
+| W2D3 | DL Discussion 1 + VAE | T1 (VAE), DL Discussion | Repurposed: move DL Discussion 1 here + VAE tutorial (review and cut down); folder to be recreated | High |
+| W2D4 | Diffusion Models only | T1 (score-based), T2 (image diffusion) | Drop VAE tutorial entirely; cut conditional diffusion from T2; T1 diffusion math trimmed (2026-05-03/04) | High |
+| ~~W2D5~~ | ~~Attention And Transformers~~ | ~~T1, T2~~ | ~~Switched with W3D1 — W2D5 is now NLP/TimeSeries, W3D1 is now Attention/Transformers (done 2026-05-02)~~ | ✅ |
+| ~~W3D1~~ | ~~Time Series And NLP~~ | ~~T1, T2, T3~~ | ~~Switched with W2D5 — W3D1 is now Attention/Transformers, W2D5 is now NLP/TimeSeries (done 2026-05-02)~~ | ✅ |
 | ~~W3D2~~ | ~~DlThinking2~~ | ~~T1~~ | ~~Rename~~ | ✅ |
 | ~~W3D3~~ | ~~Unsupervised And Self-Supervised~~ | ~~Separate utils import from OSF with outdated numpy. Migrate datasets, checkpoints and images dependency to new OSF storage.~~ | ~~Medium~~ ✅ |
-| W3D4 | Basic Reinforcement Learning | T1 | Add REINFORCE/policy gradient; condense value/policy iteration; add PyTorch | High | 
-| W3D5 | RL for Games And DlThinking3 | T1, T2, T3 | Move entirely to bonus; extract DL Thinking 3 if keeping the series | High |
+| W3D4 | Basic Reinforcement Learning | T1 | Add REINFORCE/policy gradient; condense value/policy iteration | High |
+| ~~W3D5~~ | ~~RL for Games And DlThinking3~~ | ~~T1, T2, T3~~ | ~~RL for Games (T1, T3) removed; only DL Discussion 3 (T2) kept~~ | ✅ |
 
 ---
 
@@ -72,6 +72,7 @@ You can update the OSF string to download that file.
 
 **Still open:**
 - `W1D1_Tutorial1_JAX.ipynb` — mark as bonus or remove (deferred, JAX out of scope for now)
+- Meet Our Lecturers section should list the people who actually appear in the tutorial videos, not just content creators.
 
 ---
 
@@ -134,22 +135,31 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
   sections renumbered 1–8, videos 1–9; feedback_prefix updated to `W2D2_BL`.
 - materials.yml: day name → "Convnets"; tutorial count → 1; W2D3 entry removed.
 
-### ~~W2D3 — Modern ConvNets~~ ✅ (2026-04-05)
+### W2D3 — DL Discussion 1 + VAE (repurposed)
 
-**Done:**
-- Entire folder removed. Content absorbed into W2D2_BonusLecture (and the transfer learning section went to main tutorial).
+Previously "Modern ConvNets" — folder was removed (2026-04-05), content absorbed into W2D2. Now being repurposed with new content.
+
+**Planned:**
+- Move **DL Discussion 1** (currently in W2D2 as "DL Thinking 1") to this day.
+- Move **VAE tutorial** (currently W2D4 T1) here; review and cut down the VAE content.
+- Recreate `W2D3_*` folder.
+
+**Still open:**
+- Decide how much of the VAE tutorial to keep vs. cut (pPCA, BigGAN, autoencoder sections).
+- Confirm DL Discussion 1 content fits this slot.
 
 
-### W2D4 — Generative Models
-> **⚠ Hold: do not apply coding style / dependency standardization yet.** Not recreating content but cut out VAE and math in diffusion models
+### W2D4 — Diffusion Models only
 
-**Drop T1; keep T2 and T3 (per meeting).**
-- **T1 (VAEs, autoencoders, pPCA, BigGAN):** Drop section 4-5.
-- **T2 (Score-based / diffusion):** Keep.
-- **T3 (Image diffusion, U-Net, Stable Diffusion, conditional diffusion):** Keep.
+Previously "Generative Models" (T1 VAE + T2 score-based + T3 image diffusion). Now scoped to diffusion only.
 
-**Coding style issues:**
-- T1 uses `import matplotlib.pylab as plt` — the only notebook in the course to do so. Change to `matplotlib.pyplot`.
+**Planned:**
+- Drop VAE tutorial entirely (moved to W2D3).
+- **T1 (Score-based diffusion):** Keep; math trimmed and exercises clarified (2026-05-03/04) — see edits below.
+- **T2 (Image diffusion, U-Net, Stable Diffusion, conditional diffusion):** Keep but cut down the conditional diffusion section.
+
+**Coding style issues (still open):**
+- `import matplotlib.pylab as plt` in old T1 — will be resolved when VAE tutorial is moved.
 
 **W2D4 Tutorial 1 (diffusion) edits (2026-05-03/04):**
 - `\mathcal` → `\mathscr` throughout T1 and T2 (main only; student/instructor folders untouched) — fixes Colab rendering.
@@ -169,7 +179,7 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 ---
 
-### ~~W3D2 — DL Thinking 2~~ ✅ (~2026-03)
+### ~~W3D2 — DL Discussion 2~~ ✅ (~2026-03)
 
 **Done:**
 - Folder renamed `W3D2_DlThinking2` → `W3D2_DLCaseStudy2`; `materials.yml` updated accordingly.
@@ -196,8 +206,7 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 ---
 
 ### W3D4 — Basic Reinforcement Learning
-**Add REINFORCE; add PyTorch.**
-- Currently uses only `numpy` — no PyTorch. The only Week 3 tutorial without it.
+**Add REINFORCE.**
 - Per meeting: ground in policy learning / REINFORCE first, then Q-learning.
 - **REINFORCE/policy gradient:** Completely absent — needs to be added (new section or new tutorial).
 - **Value iteration and policy iteration:** Good conceptual foundations but could be condensed into one section with fewer coding exercises.
@@ -210,10 +219,11 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 ---
 
-### W3D5 — RL for Games And [DL Thinking 3]
-**Move entirely to bonus (per meeting).**
-- T1 (Othello RL) and T3 (MCTS) are game-specific and highly specialized.
-- T2 (DL Thinking 3) could be extracted if the case study series is being kept — or dropped.
+### ~~W3D5 — RL for Games And DL Discussion 3~~ ✅
+
+**Done:**
+- T1 (Othello RL) and T3 (MCTS) removed entirely — game-specific and highly specialized.
+- T2 (DL Discussion 3) kept as the sole content for this day.
 
 **Coding style (done 2026-04-27):**
 - T1: imports and set_seed already clean — no changes needed.
@@ -224,7 +234,7 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
 
 **⚠ External dependency on personal repo:** T1 pulls game code from `github.com/raymondchua/nma_rl_games` (Raymond Chua, one of the lecturers). The `git clone` is currently commented out and replaced with an OSF mirror download, but the OSF link should be verified and the dependency on a personal repo flagged for long-term hosting (e.g., fork under NeuromatchAcademy org).
 
-**What DL Thinking 3 actually covers (T2):**
+**What DL Discussion 3 actually covers (T2):**
 Five forward-looking discussion prompts:
 1. **The Future** — distribution shift, non-stationarity, designing DL systems for a changing world
 2. **In-context Learning** — meta-learning, transformers as implicit gradient descent
@@ -236,22 +246,20 @@ This is more "Frontiers in DL" than a case study — it's a forward-looking surv
 
 ---
 
-## Naming: "DL Thinking" Series
+## Naming: "DL Thinking" → "DL Discussion" Series
 
-The term "Thinking" is now ambiguous given LLM chain-of-thought/reasoning modes. Proposed renames:
+The term "Thinking" was ambiguous given LLM chain-of-thought/reasoning modes. Renamed to **"DL Discussion"**.
 
-| Current | Content | Suggested Rename |
-|---------|---------|-----------------|
-| W2D2 "DL Thinking 1" (T2) | Designing cost functions for real problems | **DL Case Study 1** |
-| W3D2 "DL Thinking 2" | Designing architectures; multimodal strategies | **DL Case Study 2** |
-| W3D5 "DL Thinking 3" (T2) | Forward-looking: ICL, memory, multimodal, LLM robotics | **Frontiers in DL** (or drop if W3D5 is moved to bonus) |
-
-"Case Study" fits T1 and T2 well — they follow a structured vignette → discussion → design format. T3 is more of a survey/horizon-scan, so "Frontiers" is a better fit if it's kept.
+| Old Name | New Name | Status |
+|---------|---------|--------|
+| W2D2 "DL Thinking 1" (T2) | **DL Discussion 1** | Pending (moving to W2D3) |
+| W3D2 "DL Thinking 2" | **DL Discussion 2** | ✅ Done (2026-05-02) |
+| W3D5 "DL Thinking 3" (T2) | **DL Discussion 3** | ✅ Done (RL for Games removed; only T2 kept) |
 
 Folder rename implications:
 - ~~`W2D2_ConvnetsAndDlThinking`~~ → **`W2D2_Convnets` (done, 2026-04-05)**
-- `W3D2_DlThinking2` → `W3D2_CaseStudy2` or `W3D2_ArchitectureAndMultimodalDL`
-- `W3D5_ReinforcementLearningForGamesAndDlThinking3` → `W3D5_RLForGames` (bonus; DL Thinking 3 dropped or extracted)
+- ~~`W3D2_DlThinking2`~~ → **`W3D2_DeepLearningDiscussion2` (done, 2026-05-02)**
+- ~~`W3D5_ReinforcementLearningForGamesAndDlThinking3`~~ → **`W3D5_DeepLearningDiscussion3` (done)**
 
 ---
 
