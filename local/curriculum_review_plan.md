@@ -37,6 +37,8 @@ You can update the OSF string to download that file.
 ---
 
 ## Summary Table
+N.B. Final check: make the Youtube Playlists.
+Also make sure the exercises variable naming is intuitive and matches with equations.
 
 | Day | Current Name | Tutorials | Recommended Action | Priority |
 |-----|-------------|-----------|-------------------|----------|
@@ -143,6 +145,10 @@ Previously "Modern ConvNets" — folder was removed (2026-04-05), content absorb
 - Move **DL Discussion 1** (currently in W2D2 as "DL Thinking 1") to this day.
 - Move **VAE tutorial** (currently W2D4 T1) here; review and cut down the VAE content.
 - Recreate `W2D3_*` folder.
+
+**W2D3 Tutorial 1 edits (2026-05-06):**
+- **Section 5** (State of the art VAEs and Wrap-up) marked **Bonus** — advanced VAE variants; not required.
+- **Section 4** (VAE basics) kept as core content — mainly conceptual and provides grounding for understanding diffusion models and other generative models.
 
 **Still open:**
 - Decide how much of the VAE tutorial to keep vs. cut (pPCA, BigGAN, autoencoder sections).
