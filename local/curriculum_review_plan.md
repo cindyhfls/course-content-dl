@@ -49,8 +49,8 @@ Also make sure the exercises variable naming is intuitive and matches with equat
 | **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | Make sure the project points to the correct tutorial name! |
 | ~~W2D1~~ | ~~Regularization~~ | ~~T1, T2~~ | ~~Fine as-is~~ | — ✅ |
 | ~~W2D2~~ | ~~ConvNets~~ | ~~T1, BonusLecture~~ | ~~Folder renamed to W2D2_Convnets; T1 trimmed; Transfer Learning added as Section 5; BonusLecture merged from W2D3 T1+T2 (modern ConvNets + facial recognition + ethics)~~ | ~~High~~ ✅ |
-| W2D3 | DL Discussion 1 + VAE | T1 (VAE), DL Discussion | Repurposed: move DL Discussion 1 here + VAE tutorial (review and cut down); folder to be recreated | High |
-| W2D4 | Diffusion Models only | T1 (score-based), T2 (image diffusion) | Drop VAE tutorial entirely; cut conditional diffusion from T2; T1 diffusion math trimmed (2026-05-03/04) | High |
+| ~~W2D3~~ | ~~DL Discussion 1 + VAE~~ | ~~T1 (VAE), T2 (DL Discussion 1), BonusLecture (Geoffrey Hinton)~~ | ~~Repurposed: DL Discussion 1 moved here as T2; VAE tutorial moved here as T1 (Section 5 Bonus); folder recreated as W2D3\_GenerativeModelsAndDeepLearningDiscussion1~~ | ~~High~~ ✅ |
+| ~~W2D4~~ | ~~Diffusion Models only~~ | ~~T1 (score-based), T2 (image diffusion)~~ | ~~VAE tutorial dropped; Section 2 (Conditional Diffusion) marked Bonus in T2; T1 math trimmed and exercises clarified (2026-05-03/04); SyntaxWarnings, np.sqrt, utils cell, SD model, and image display fixes (2026-05-09)~~ | ~~High~~ ✅ |
 | ~~W2D5~~ | ~~Attention And Transformers~~ | ~~T1, T2~~ | ~~Switched with W3D1 — W2D5 is now NLP/TimeSeries, W3D1 is now Attention/Transformers (done 2026-05-02)~~ | ✅ |
 | ~~W3D1~~ | ~~Time Series And NLP~~ | ~~T1, T2, T3~~ | ~~Switched with W2D5 — W3D1 is now Attention/Transformers, W2D5 is now NLP/TimeSeries (done 2026-05-02)~~ | ✅ |
 | ~~W3D2~~ | ~~DlThinking2~~ | ~~T1~~ | ~~Rename~~ | ✅ |
@@ -137,35 +137,33 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
   sections renumbered 1–8, videos 1–9; feedback_prefix updated to `W2D2_BL`.
 - materials.yml: day name → "Convnets"; tutorial count → 1; W2D3 entry removed.
 
-### W2D3 — DL Discussion 1 + VAE (repurposed)
+### ~~W2D3 — DL Discussion 1 + VAE (repurposed)~~ ✅ (2026-05-09)
 
-Previously "Modern ConvNets" — folder was removed (2026-04-05), content absorbed into W2D2. Now being repurposed with new content.
+Previously "Modern ConvNets" — folder was removed (2026-04-05), content absorbed into W2D2. Repurposed with new content.
 
-**Planned:**
-- Move **DL Discussion 1** (currently in W2D2 as "DL Thinking 1") to this day.
-- Move **VAE tutorial** (currently W2D4 T1) here; review and cut down the VAE content.
-- Recreate `W2D3_*` folder.
+**Done:**
+- Folder recreated as `W2D3_GenerativeModelsAndDeepLearningDiscussion1`.
+- **DL Discussion 1** (Cost Functions; formerly W2D2 "DL Thinking 1") moved here as T2.
+- **VAE tutorial** (formerly W2D4 T1) moved here as T1; Section 5 marked Bonus.
+- BonusLecture (Geoffrey Hinton) retained from old W2D4.
 
 **W2D3 Tutorial 1 edits (2026-05-06):**
 - **Section 5** (State of the art VAEs and Wrap-up) marked **Bonus** — advanced VAE variants; not required.
 - **Section 4** (VAE basics) kept as core content — mainly conceptual and provides grounding for understanding diffusion models and other generative models.
 
-**Still open:**
-- Decide how much of the VAE tutorial to keep vs. cut (pPCA, BigGAN, autoencoder sections).
-- Confirm DL Discussion 1 content fits this slot.
+**W2D3 fixes (2026-05-09):**
+- Fixed `feedback_prefix` strings: were incorrectly set to `"W2D4_T1"` / `"W2D4_BonusLecture"`; corrected to `"W2D3_T1"` / `"W2D3_BonusLecture"`.
 
 
-### W2D4 — Diffusion Models only
+### ~~W2D4 — Diffusion Models only~~ ✅ (2026-05-09)
 
 Previously "Generative Models" (T1 VAE + T2 score-based + T3 image diffusion). Now scoped to diffusion only.
 
-**Planned:**
-- Drop VAE tutorial entirely (moved to W2D3).
-- **T1 (Score-based diffusion):** Keep; math trimmed and exercises clarified (2026-05-03/04) — see edits below.
-- **T2 (Image diffusion, U-Net, Stable Diffusion, conditional diffusion):** Keep but cut down the conditional diffusion section.
-
-**Coding style issues (still open):**
-- `import matplotlib.pylab as plt` in old T1 — will be resolved when VAE tutorial is moved.
+**Done:**
+- VAE tutorial dropped (moved to W2D3).
+- **T1 (Score-based diffusion):** Math trimmed and exercises clarified (2026-05-03/04) — see edits below.
+- **T2 (Image diffusion, U-Net, Stable Diffusion, conditional diffusion):** Section 2 (Conditional Diffusion) marked Bonus.
+- `import matplotlib.pylab as plt` coding style issue resolved — VAE tutorial moved to W2D3, which uses `.pyplot`; W2D4 T1 (diffusion) unaffected.
 
 **W2D4 Tutorial 1 (diffusion) edits (2026-05-03/04):**
 - `\mathcal` → `\mathscr` throughout T1 and T2 (main only; student/instructor folders untouched) — fixes Colab rendering.
@@ -182,6 +180,14 @@ Previously "Generative Models" (T1 VAE + T2 score-based + T3 image diffusion). N
   - `std[:, None]` → `std.unsqueeze(1)` for clarity
   - Shape annotations added for all intermediate variables
   - Note added explaining `random_t` is continuous `t ∈ [eps, 1]`, unlike the discrete `nsteps` index in reverse diffusion
+
+**W2D4 Tutorial 1 & 2 fixes (2026-05-09):**
+- Fixed all invalid escape sequences (`\l`, `\s`, `\sigma`, etc.) in docstrings and plot title strings — Python 3.12+ SyntaxWarning; fixed with `r"""..."""` prefix or `\\` escaping.
+- Replaced all `np.sqrt()` calls on torch tensors with `** 0.5` throughout T1 — NumPy 2.0 DeprecationWarning from `__array_wrap__`.
+- Restored missing "Define utils functions" cell in T1 (`GaussianFourierProjection`, `ScoreModel_Time`, `sample_X_and_score_t_depend`) — was accidentally removed.
+- Swapped gated SD model (`stabilityai/stable-diffusion-2-1`) to open model (`stable-diffusion-v1-5/stable-diffusion-v1-5`) with `token=False` to suppress HF token prompt on Colab.
+- Fixed SD inference image not displaying in T2: added explicit `display(image)` call inside `if execute:` block (Jupyter only auto-displays top-level last expressions).
+- Swept all W1D* and W2D* notebooks for SyntaxWarnings and `np.sqrt` on torch tensors — no issues found outside W2D4.
 
 ---
 
@@ -258,7 +264,7 @@ The term "Thinking" was ambiguous given LLM chain-of-thought/reasoning modes. Re
 
 | Old Name | New Name | Status |
 |---------|---------|--------|
-| W2D2 "DL Thinking 1" (T2) | **DL Discussion 1** | Pending (moving to W2D3) |
+| ~~W2D2 "DL Thinking 1" (T2)~~ | ~~**DL Discussion 1**~~ | ✅ Done — moved to W2D3 as T2 (2026-05-09) |
 | W3D2 "DL Thinking 2" | **DL Discussion 2** | ✅ Done (2026-05-02) |
 | W3D5 "DL Thinking 3" (T2) | **DL Discussion 3** | ✅ Done (RL for Games removed; only T2 kept) |
 
@@ -274,7 +280,7 @@ Folder rename implications:
 | Issue | Affected Days | Fix | Status |
 |-------|--------------|-----|--------|
 | Missing `nma.mplstyle` | ~~W3D1 T1~~, ~~W3D4~~, W3D5 T1/T3 | Add standard figure settings cell | W3D4 done 2026-04-27; W3D1 T1 already had it; W3D5 T1/T3 have no matplotlib |
-| `matplotlib.pylab` vs `.pyplot` | W2D4 T1 | Change to `import matplotlib.pyplot as plt` | Open (W2D4 on hold) |
+| ~~`matplotlib.pylab` vs `.pyplot`~~ | ~~W2D4 T1~~ | ~~Change to `import matplotlib.pyplot as plt`~~ | ✅ Resolved — VAE tutorial (which had this issue) moved to W2D3; W2D3 T1 uses `.pyplot` |
 | `import torch` missing from top-level setup | ~~W3D1 T1~~ | Add to setup cell | Done 2026-04-27 |
 | Duplicate/stray imports inside `set_seed` | ~~W3D1 T1/T3~~, ~~W3D3~~ | Remove from set_seed body; ensure in top-level imports | Done 2026-04-27 |
 | Duplicate `import random` in imports cell | ~~W3D5 T3~~ | Remove duplicate | Done 2026-04-27 |
