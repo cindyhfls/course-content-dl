@@ -48,15 +48,15 @@ Also make sure the exercises variable naming is intuitive and matches with equat
 | ~~W1D4~~ | ~~Optimization~~ | ~~T1 (very long)~~ | ~~Coding exercises in Secs 4–7 marked optional~~ | ~~High~~ ✅ |
 | **W1D5** | **Project Wildcard Day (Flex)** | — | **Students study one curriculum day relevant to their project track; see flex day section below** | Make sure the project points to the correct tutorial name! |
 | ~~W2D1~~ | ~~Regularization~~ | ~~T1, T2~~ | ~~Fine as-is~~ | — ✅ |
-| ~~W2D2~~ | ~~ConvNets~~ | ~~T1, BonusLecture~~ | ~~Folder renamed to W2D2_Convnets; T1 trimmed; Transfer Learning added as Section 5; BonusLecture merged from W2D3 T1+T2 (modern ConvNets + facial recognition + ethics)~~ | ~~High~~ ✅ |
+| ~~W2D2~~ | ~~ConvNets~~ | ~~T1, T2, T3~~ | ~~Folder renamed to W2D2_Convnets; T1 trimmed; Transfer Learning added as Section 5; T2 (training loop) extracted from T1 bonus; T3 (modern ConvNets + facial recognition + ethics) renamed from BonusLecture~~ | ~~High~~ ✅ |
 | ~~W2D3~~ | ~~DL Discussion 1 + VAE~~ | ~~T1 (VAE), T2 (DL Discussion 1), BonusLecture (Geoffrey Hinton)~~ | ~~Repurposed: DL Discussion 1 moved here as T2; VAE tutorial moved here as T1 (Section 5 Bonus); folder recreated as W2D3\_GenerativeModelsAndDeepLearningDiscussion1~~ | ~~High~~ ✅ |
-| ~~W2D4~~ | ~~Diffusion Models only~~ | ~~T1 (score-based), T2 (image diffusion)~~ | ~~VAE tutorial dropped; Section 2 (Conditional Diffusion) marked Bonus in T2; T1 math trimmed and exercises clarified (2026-05-03/04); SyntaxWarnings, np.sqrt, utils cell, SD model, and image display fixes (2026-05-09)~~ | ~~High~~ ✅ |
+| ~~W2D4~~ | ~~Diffusion Models only~~ | ~~T1 (score-based), T2 (image diffusion)~~ | ~~VAE tutorial dropped; T1 math trimmed and exercises clarified; T2 bonus content (conditional diffusion + training) removed; T2 now: U-Net → unconditional MNIST diffusion → ethics → summary (47 cells)~~ | ~~High~~ ✅ |
 | ~~W2D5~~ | ~~Attention And Transformers~~ | ~~T1, T2~~ | ~~Switched with W3D1 — W2D5 is now NLP/TimeSeries, W3D1 is now Attention/Transformers (done 2026-05-02)~~ | ✅ |
 | ~~W3D1~~ | ~~Time Series And NLP~~ | ~~T1, T2, T3~~ | ~~Switched with W2D5 — W3D1 is now Attention/Transformers, W2D5 is now NLP/TimeSeries (done 2026-05-02)~~ | ✅ |
 | ~~W3D2~~ | ~~DlThinking2~~ | ~~T1~~ | ~~Rename~~ | ✅ |
 | ~~W3D3~~ | ~~Unsupervised And Self-Supervised~~ | ~~Separate utils import from OSF with outdated numpy. Migrate datasets, checkpoints and images dependency to new OSF storage.~~ | ~~Medium~~ ✅ |
-| W3D4 | Basic Reinforcement Learning | T1 | Add REINFORCE/policy gradient; condense value/policy iteration | High |
-| ~~W3D5~~ | ~~RL for Games And DlThinking3~~ | ~~T1, T2, T3~~ | ~~RL for Games (T1, T3) removed; only DL Discussion 3 (T2) kept~~ | ✅ |
+| W3D4 | Basic Reinforcement Learning | T1 | T1 restructured: simplified to 5 exercises (GridWorld, MDP, Q steps-to-go, Value Iteration, Policy Iteration); Q-learning + ε-greedy moved to W3D5 T1; extra scaffolding added | High (in progress) |
+| W3D5 | RL (Q-learning) And DL Discussion 3 | T1, T2 | New T1 created: Q-learning + ε-greedy (moved from W3D4); T2 is DL Discussion 3 (unchanged); RL for Games bonus section TBD | In progress |
 
 ---
 
@@ -136,6 +136,29 @@ No tutorial notebook for this day. Students study one curriculum day relevant to
   speed-accuracy bonus) with W2D3_Tutorial2 (facial recognition + ethics);
   sections renumbered 1–8, videos 1–9; feedback_prefix updated to `W2D2_BL`.
 - materials.yml: day name → "Convnets"; tutorial count → 1; W2D3 entry removed.
+- **(2026-05-18) Bonus 1 training loop extracted as Tutorial 2:** "Bonus 1: Write your own
+  training loop" (Fashion-MNIST, backprop reminder, training loop exercise, overfitting Think!)
+  moved from T1 cells 143–177 into new `W2D2_Tutorial2.ipynb`; section headings de-labeled
+  (Section 1.x); "in the last section" → "in Tutorial 1"; videos renumbered 1–2;
+  `feedback_prefix = "W2D2_T2"`. Section 5 (Transfer Learning) stays in T1.
+  Former `W2D2_BonusLecture.ipynb` renamed to `W2D2_Tutorial3.ipynb`; title updated to
+  "Tutorial 3: Modern ConvNets and Facial Recognition"; `feedback_prefix` updated to `"W2D2_T3"`.
+
+**Bonus sections reviewed (W1–W2) — not separated (2026-05-18):**
+
+The following bonus sections were evaluated for extraction into standalone tutorials and left in place.
+
+| Notebook | Bonus section | Cells | Reason to leave in place |
+|---|---|---|---|
+| W1D1 T1 | 60 Years of ML visualization | 11 | Lightweight exploration with no exercises; too thin to stand alone |
+| W1D2 T2 | (unlabeled) | 4 | Too small |
+| W1D3 T1 | Neuron Physiology / LIF model | 11 | One demo + one Think! — fine as an appendix, not a tutorial |
+| W1D3 T2 | Need for good initialization | 10 | Small; directly extends the initialization content above it |
+| W1D4 T1 | Putting it all together | 17 | Uses optimizer objects built progressively in prior sections; not separable |
+| W2D1 T1 | Train with randomized labels | 8 | Too small |
+| W2D1 T2 | Adversarial Attacks | 4 | Too small |
+| W2D4 T1 | Bonus Exercise 1.3 + score-matching math | 26 | Mid-tutorial exercise + collapsible math note; not a tail section; not separable |
+| W2D4 T2 | Section 2 (Conditional Diffusion) + Bonus training | 34 | Both deleted from T2 (2026-05-18); see W2D4 section |
 
 ### ~~W2D3 — DL Discussion 1 + VAE (repurposed)~~ ✅ (2026-05-09)
 
@@ -154,6 +177,9 @@ Previously "Modern ConvNets" — folder was removed (2026-04-05), content absorb
 **W2D3 fixes (2026-05-09):**
 - Fixed `feedback_prefix` strings: were incorrectly set to `"W2D4_T1"` / `"W2D4_BonusLecture"`; corrected to `"W2D3_T1"` / `"W2D3_BonusLecture"`.
 
+**W2D3 materials.yml fix (2026-05-18):**
+- BonusLecture slide link corrected from `r9pjc` to `gx84r` to match the `link_id` in `W2D3_BonusLecture.ipynb` (Geoffrey Hinton: distillation and the brain). The `gx84r` link had been mistakenly listed under W2D4 in materials.yml; moved here where it belongs.
+
 
 ### ~~W2D4 — Diffusion Models only~~ ✅ (2026-05-09)
 
@@ -162,7 +188,7 @@ Previously "Generative Models" (T1 VAE + T2 score-based + T3 image diffusion). N
 **Done:**
 - VAE tutorial dropped (moved to W2D3).
 - **T1 (Score-based diffusion):** Math trimmed and exercises clarified (2026-05-03/04) — see edits below.
-- **T2 (Image diffusion, U-Net, Stable Diffusion, conditional diffusion):** Section 2 (Conditional Diffusion) marked Bonus.
+- **T2 (Image diffusion, U-Net, Stable Diffusion, conditional diffusion):** Section 2 (Conditional Diffusion) marked Bonus; later removed entirely (see 2026-05-18 note).
 - `import matplotlib.pylab as plt` coding style issue resolved — VAE tutorial moved to W2D3, which uses `.pyplot`; W2D4 T1 (diffusion) unaffected.
 
 **W2D4 Tutorial 1 (diffusion) edits (2026-05-03/04):**
@@ -189,12 +215,40 @@ Previously "Generative Models" (T1 VAE + T2 score-based + T3 image diffusion). N
 - Fixed SD inference image not displaying in T2: added explicit `display(image)` call inside `if execute:` block (Jupyter only auto-displays top-level last expressions).
 - Swept all W1D* and W2D* notebooks for SyntaxWarnings and `np.sqrt` on torch tensors — no issues found outside W2D4.
 
+**T2 restructured (2026-05-18):**
+
+Both bonus blocks removed from T2:
+- **Section 2: Conditional Diffusion Model** (cells 40–57, videos + Stable Diffusion interactive
+  demo + Think! on U-Net architecture) — deleted.
+- **Bonus: Train Conditional Diffusion for MNIST** (cells 65–73, UNet_Conditional + loss +
+  training loop) — deleted.
+
+Rationale: bonus content was tightly coupled to main tutorial code (shared `marginal_prob_std`,
+`diffusion_coeff_fn`) and not extractable as a standalone tutorial. Deleting simplifies T2 to a
+clean arc: U-Net architecture → unconditional MNIST diffusion → ethical considerations → summary.
+
+Remaining changes: title updated to "Tutorial 2: Image Diffusion"; former Section 3 (Ethical
+Considerations) renumbered to Section 2; Video 4 → Video 2; Think! 3 → Think! 2; conditional
+diffusion bullet removed from Summary. T2 now 47 cells (was 74).
+
 ---
 
 ### ~~W3D2 — DL Discussion 2~~ ✅ (~2026-03)
 
 **Done:**
 - Folder renamed `W3D2_DlThinking2` → `W3D2_DLCaseStudy2`; `materials.yml` updated accordingly.
+
+---
+
+**Bonus sections reviewed (W3) — not separated (2026-05-18):**
+
+| Notebook | Bonus section | Cells | Reason to leave in place |
+|---|---|---|---|
+| W3D1/W2D5_Tutorial2 | Entire file is bonus tutorial (pre-training, fine-tuning, robustness) | 67 | Already a standalone bonus tutorial file — no action needed |
+| W3D2_Tutorial1 | `(Bonus) Think!`: Class-based strategies | 1 | Single inline discussion question mid-tutorial (cell 25); Section 3 continues right after; not separable |
+| W3D3_Tutorial1 | Bonus 1–3: SimCLR representation invariance, collapse avoidance, few-shot learning | 44 | Directly depends on SimCLR model trained in main tutorial; same situation as W2D4 conditional diffusion — not extractable without duplicating entire setup |
+| W3D3_BonusLecture | Bonus Lecture: Melanie Mitchell | 6 | Already a standalone file |
+| W3D4_BonusLecture | Bonus Lecture: Chelsea Finn | 6 | Already a standalone file |
 
 ---
 
@@ -217,34 +271,37 @@ Previously "Generative Models" (T1 VAE + T2 score-based + T3 image diffusion). N
 
 ---
 
-### W3D4 — Basic Reinforcement Learning
-**Add REINFORCE.**
-- Per meeting: ground in policy learning / REINFORCE first, then Q-learning.
-- **REINFORCE/policy gradient:** Completely absent — needs to be added (new section or new tutorial).
-- **Value iteration and policy iteration:** Good conceptual foundations but could be condensed into one section with fewer coding exercises.
+### W3D4 — Basic Reinforcement Learning (in progress, 2026-05-18)
 
-**Coding style (done 2026-04-27):**
-- `nma.mplstyle` figure settings cell added after imports cell.
-- Version check cell added after vibecheck.
+**Done:**
+- **Coding style (2026-04-27):** `nma.mplstyle` figure settings cell added; version check cell added.
+- **T1 restructured (2026-05-18):** Trimmed from 7 exercises to 5. Added scaffolding markdown cells ("Before you start" worked examples) before each exercise. BFS scaffolding cell removed (lecture does not cover BFS). `raise NotImplementedError` restored to all exercise stubs for consistency with other NMA tutorials.
+  - **Exercise 1:** GridWorld construction (fill in `while` loop condition only)
+  - **Exercise 2:** MDP matrices (P/R) — pre-filled boilerplate; blanks are `nbr` and `cell_to_state` indexing
+  - **Exercise 3:** Q steps-to-go — pre-filled loop structure; blanks are Q-value assignments
+  - **Exercise 4:** Value Iteration (Bellman equation) — pre-filled `new_Q`; blanks are `max_next_Q`, Bellman line, error, `plan()`
+  - **Exercise 5:** Policy Iteration — moved here from planned W3D5 (follows logically from Value Iteration)
+- Q-learning (Ex 6) and ε-greedy (Ex 7) removed from T1 → moved to W3D5 T1.
 
-- **Only notebook with type hints** (`from typing import Optional, Tuple`) — decide on course-wide policy (see Style section).
+**Still open:**
+- REINFORCE/policy gradient: deferred (not added yet).
+- **Only notebook with type hints** (`from typing import Optional, Tuple`) — decide course policy; likely remove for consistency.
 
 ---
 
-### ~~W3D5 — RL for Games And DL Discussion 3~~ ✅
+### W3D5 — RL (Q-learning) And DL Discussion 3 (in progress, 2026-05-18)
 
 **Done:**
-- T1 (Othello RL) and T3 (MCTS) removed entirely — game-specific and highly specialized.
-- T2 (DL Discussion 3) kept as the sole content for this day.
+- **New T1 created (2026-05-18):** Q-learning + ε-greedy exploration, moved from W3D4. Placed first so RL project students (lunar lander / human RL) can do W3D4 + W3D5 T1 as their wildcard day (W1D5) for DQN prerequisites.
+  - Cell 10: Complete W3D4 implementations provided as given code (GridWorldBase, MDPBase, MDPToGo, MDPValueIteration + setup) so T1 is self-contained.
+  - Section 1: Q-learning (TD error update)
+  - Section 2: ε-greedy exploration
+  - `feedback_prefix = "W3D5_T1"`
+- **T2 (DL Discussion 3):** kept unchanged (was the original W3D5 Tutorial 1, renamed to Tutorial 2).
+- Old T1 (Othello RL) and T3 (MCTS) removed entirely — game-specific and highly specialized.
 
-**Coding style (done 2026-04-27):**
-- T1: imports and set_seed already clean — no changes needed.
-- T3: removed duplicate `import random` from imports cell; version check added.
-- T1/T3: version check cell added after vibecheck.
-- T1/T3: no matplotlib usage — no figure settings needed.
-
-
-**⚠ External dependency on personal repo:** T1 pulls game code from `github.com/raymondchua/nma_rl_games` (Raymond Chua, one of the lecturers). The `git clone` is currently commented out and replaced with an OSF mirror download, but the OSF link should be verified and the dependency on a personal repo flagged for long-term hosting (e.g., fork under NeuromatchAcademy org).
+**Still open:**
+- Bonus section at end of T1: add Section 1 from upstream "RL for Games" (Othello game loop + RandomPlayer exercise) as optional material. Not yet implemented.
 
 **What DL Discussion 3 actually covers (T2):**
 Five forward-looking discussion prompts:
@@ -253,8 +310,6 @@ Five forward-looking discussion prompts:
 3. **Memories** — episodic vs. semantic memory analogues in DL
 4. **Multiple Information Sources** — multimodal fusion, language as a query interface (PaLM-E)
 5. **Language for Robotics** — LLMs for instruction-following and task planning (RT-1, Code-As-Policies)
-
-This is more "Frontiers in DL" than a case study — it's a forward-looking survey of where the field is heading, not a practitioner design exercise.
 
 ---
 
