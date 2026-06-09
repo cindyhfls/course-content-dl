@@ -37,8 +37,8 @@ You can update the OSF string to download that file.
 ---
 
 ## Summary Table
-N.B. Final check: make the Youtube Playlists.
-Also make sure the exercises variable naming is intuitive and matches with equations.
+~~N.B. Final check: make the Youtube Playlists.~~
+~~Also make sure the exercises variable naming is intuitive and matches with equations.~~
 
 | Day | Current Name | Tutorials | Recommended Action | Priority |
 |-----|-------------|-----------|-------------------|----------|
@@ -103,8 +103,6 @@ Also make sure the exercises variable naming is intuitive and matches with equat
 - Coding exercises in Secs 4, 6, and 7 (momentum, minibatch sampling, RMSprop) marked `*(optional)*` to reduce student load.
 - **(2026-05-01) Tutorial1 split reverted:** After review and feedback, the earlier split of Tutorial1 into two notebooks and the addition of Tutorial2 were undone. `W1D4_Tutorial1` is restored as the single unified original (Secs 1–8 + Bonus, 145 cells). `W1D4_Tutorial1_Bonus.ipynb`, `W1D4_BonusLecture.ipynb`, and `W1D4_Tutorial2.ipynb` all deleted. Only two changes kept on top of the upstream original: the import/version check cell (with correct GitHub URL for `requirements.txt`) and the `*(optional)*` markers on exercises 4, 6, and 7.
 
-**Still open (deferred):**
-- LR scheduling consolidation with W2D1 T2 Sec 4 not yet addressed.
 
 ---
 
@@ -112,8 +110,8 @@ Also make sure the exercises variable naming is intuitive and matches with equat
 
 No tutorial notebook for this day. Students study one curriculum day relevant to their project track.
 
-**Still open:**
-- At the end of the restructuring pass, verify that the suggested day titles referenced in the project notebooks are consistent with the final content and naming of each tutorial day (especially days that have been renamed or had content moved, e.g. W1D4, W2D2, W3D2). Also the actual dates (e.g. July 15 should not be there).
+~~**Still open:**~~
+~~- At the end of the restructuring pass, verify that the suggested day titles referenced in the project notebooks are consistent with the final content and naming of each tutorial day (especially days that have been renamed or had content moved, e.g. W1D4, W2D2, W3D2). Also the actual dates (e.g. July 15 should not be there).~~
 
 ---
 
@@ -236,7 +234,7 @@ diffusion bullet removed from Summary. T2 now 47 cells (was 74).
 ### ~~W3D2 — DL Discussion 2~~ ✅ (~2026-03)
 
 **Done:**
-- Folder renamed `W3D2_DlThinking2` → `W3D2_DLCaseStudy2`; `materials.yml` updated accordingly.
+- Folder renamed `W3D2_DlThinking2` → `W3D2_DeepLearningDiscussion2`; `materials.yml` updated accordingly.
 
 ---
 
@@ -252,7 +250,7 @@ diffusion bullet removed from Summary. T2 now 47 cells (was 74).
 
 ---
 
-### W3D3 — Unsupervised And Self-Supervised Learning
+### ~~W3D3 — Unsupervised And Self-Supervised Learning~~ ✅
 
 **Coding style (done 2026-04-27):**
 - `import importlib` and `import random` added to top-level imports cell (were missing).
@@ -266,8 +264,8 @@ diffusion bullet removed from Summary. T2 now 47 cells (was 74).
 - OSF download URL updated to new project-specific package (`https://osf.io/ec7hy/`, file `NMA_DL_W3D3_dependencies.zip`) containing only dataset, checkpoints, and images (no Python module files).
 - `extractall()` → `extractall(REPO_PATH)` so flat zip contents land under `neuromatch_ssl_tutorial/` as expected.
 
-**Pending:**
-- Colab test to confirm end-to-end run.
+~~**Pending:**~~
+~~- Colab test to confirm end-to-end run.~~
 
 ---
 
@@ -283,10 +281,6 @@ diffusion bullet removed from Summary. T2 now 47 cells (was 74).
   - **Exercise 5:** Policy Iteration — moved here from planned W3D5 (follows logically from Value Iteration)
 - Q-learning (Ex 6) and ε-greedy (Ex 7) removed from T1 → moved to W3D5 T1.
 
-**Still open:**
-- REINFORCE/policy gradient: deferred (not added yet).
-- **Only notebook with type hints** (`from typing import Optional, Tuple`) — decide course policy; likely remove for consistency.
-
 ---
 
 ### W3D5 — RL (Q-learning) And DL Discussion 3 (in progress, 2026-05-18)
@@ -298,10 +292,7 @@ diffusion bullet removed from Summary. T2 now 47 cells (was 74).
   - Section 2: ε-greedy exploration
   - `feedback_prefix = "W3D5_T1"`
 - **T2 (DL Discussion 3):** kept unchanged (was the original W3D5 Tutorial 1, renamed to Tutorial 2).
-- Old T1 (Othello RL) and T3 (MCTS) removed entirely — game-specific and highly specialized.
-
-**Still open:**
-- Bonus section at end of T1: add Section 1 from upstream "RL for Games" (Othello game loop + RandomPlayer exercise) as optional material. Not yet implemented.
+RL for games moved to bonus
 
 **What DL Discussion 3 actually covers (T2):**
 Five forward-looking discussion prompts:
@@ -321,12 +312,12 @@ The term "Thinking" was ambiguous given LLM chain-of-thought/reasoning modes. Re
 |---------|---------|--------|
 | ~~W2D2 "DL Thinking 1" (T2)~~ | ~~**DL Discussion 1**~~ | ✅ Done — moved to W2D3 as T2 (2026-05-09) |
 | W3D2 "DL Thinking 2" | **DL Discussion 2** | ✅ Done (2026-05-02) |
-| W3D5 "DL Thinking 3" (T2) | **DL Discussion 3** | ✅ Done (RL for Games removed; only T2 kept) |
+| ~~W3D5 "DL Thinking 3" (T2)~~ | ~~**DL Discussion 3**~~ | ✅ Done 
 
 Folder rename implications:
 - ~~`W2D2_ConvnetsAndDlThinking`~~ → **`W2D2_Convnets` (done, 2026-04-05)**
 - ~~`W3D2_DlThinking2`~~ → **`W3D2_DeepLearningDiscussion2` (done, 2026-05-02)**
-- ~~`W3D5_ReinforcementLearningForGamesAndDlThinking3`~~ → **`W3D5_DeepLearningDiscussion3` (done)**
+- ~~`W3D5_ReinforcementLearningForGamesAndDlThinking3`~~ → **`W3D5_AdvancedReinforcementLearningAndDeepLearningDiscussion3` (done)**
 
 ---
 
