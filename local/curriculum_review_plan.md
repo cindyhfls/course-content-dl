@@ -55,8 +55,8 @@ You can update the OSF string to download that file.
 | ~~W3D1~~ | ~~Time Series And NLP~~ | ~~T1, T2, T3~~ | ~~Switched with W2D5 — W3D1 is now Attention/Transformers, W2D5 is now NLP/TimeSeries (done 2026-05-02)~~ | ✅ |
 | ~~W3D2~~ | ~~DlThinking2~~ | ~~T1~~ | ~~Rename~~ | ✅ |
 | ~~W3D3~~ | ~~Unsupervised And Self-Supervised~~ | ~~Separate utils import from OSF with outdated numpy. Migrate datasets, checkpoints and images dependency to new OSF storage.~~ | ~~Medium~~ ✅ |
-| W3D4 | Basic Reinforcement Learning | T1 | T1 restructured: simplified to 5 exercises (GridWorld, MDP, Q steps-to-go, Value Iteration, Policy Iteration); Q-learning + ε-greedy moved to W3D5 T1; extra scaffolding added | High (in progress) |
-| W3D5 | RL (Q-learning) And DL Discussion 3 | T1, T2 | New T1 created: Q-learning + ε-greedy (moved from W3D4); T2 is DL Discussion 3 (unchanged); RL for Games bonus section TBD | In progress |
+| W3D4 | Basic Reinforcement Learning | T1, T2 | T1 restructured: simplified to 5 exercises (GridWorld, MDP, Q steps-to-go, Value Iteration, Policy Iteration); Q-learning + ε-greedy moved back from W3D5 as separate T2 (2026-06-12) | High (in progress) |
+| W3D5 | DL Discussion 3 | T1 | Q-learning T1 moved back to W3D4 (2026-06-12); T1 is now DL Discussion 3 (was T2); RL for Games bonus section TBD | In progress |
 
 ---
 
@@ -279,20 +279,15 @@ diffusion bullet removed from Summary. T2 now 47 cells (was 74).
   - **Exercise 3:** Q steps-to-go — pre-filled loop structure; blanks are Q-value assignments
   - **Exercise 4:** Value Iteration (Bellman equation) — pre-filled `new_Q`; blanks are `max_next_Q`, Bellman line, error, `plan()`
   - **Exercise 5:** Policy Iteration — moved here from planned W3D5 (follows logically from Value Iteration)
-- Q-learning (Ex 6) and ε-greedy (Ex 7) removed from T1 → moved to W3D5 T1.
+- Q-learning (Ex 6) and ε-greedy (Ex 7) removed from T1 → moved to W3D5 T1 (2026-05-18), then moved back to W3D4 as T2 (2026-06-12); kept as a separate tutorial, not merged into T1.
 
 ---
 
-### W3D5 — RL (Q-learning) And DL Discussion 3 (in progress, 2026-05-18)
+### W3D5 — DL Discussion 3 (in progress)
 
 **Done:**
-- **New T1 created (2026-05-18):** Q-learning + ε-greedy exploration, moved from W3D4. Placed first so RL project students (lunar lander / human RL) can do W3D4 + W3D5 T1 as their wildcard day (W1D5) for DQN prerequisites.
-  - Cell 10: Complete W3D4 implementations provided as given code (GridWorldBase, MDPBase, MDPToGo, MDPValueIteration + setup) so T1 is self-contained.
-  - Section 1: Q-learning (TD error update)
-  - Section 2: ε-greedy exploration
-  - `feedback_prefix = "W3D5_T1"`
-- **T2 (DL Discussion 3):** kept unchanged (was the original W3D5 Tutorial 1, renamed to Tutorial 2).
-RL for games moved to bonus
+- **Q-learning T1 moved back to W3D4 (2026-06-12):** Originally moved from W3D4 to W3D5 T1 (2026-05-18); reverted to W3D4 as T2, kept as a separate tutorial. W3D5 T1 is now DL Discussion 3 (was T2).
+- RL for games moved to bonus
 
 **What DL Discussion 3 actually covers (T2):**
 Five forward-looking discussion prompts:
